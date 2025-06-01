@@ -8,9 +8,11 @@ def set(name, value):
       data = json.load(file)
   else:
     data = {}
+    
   data.update({name: value})
   with open(filename, "w") as file:
     json.dump(data, file, indent=4)
+
 def get(name):
   if os.path.exists(filename):
     with open(filename, "r") as file:
